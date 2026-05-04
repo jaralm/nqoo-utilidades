@@ -1,0 +1,45 @@
+:root {
+  --bg: #f6f1e8;
+  --surface: #fffaf3;
+  --surface-2: #f1e7da;
+  --text: #2b241f;
+  --muted: #6f655b;
+  --border: #ddcfbf;
+  --accent: #9c5b22;
+  --good: #e2f0e5;
+  --warn: #fff1da;
+  --danger: #f8dfdf;
+}
+
+* { box-sizing: border-box; }
+html, body, #root { margin: 0; min-height: 100%; font-family: Arial, sans-serif; color: var(--text); background: var(--bg); }
+body { min-height: 100vh; }
+
+.app-shell { max-width: 1240px; margin: 0 auto; padding: 28px 16px 48px; }
+.hero { margin-bottom: 24px; }
+.eyebrow { text-transform: uppercase; letter-spacing: 0.12em; font-size: 12px; color: var(--accent); font-weight: 700; }
+h1 { font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.1; margin: 8px 0 12px; }
+.hero-copy { max-width: 70ch; color: var(--muted); }
+.layout { display: grid; grid-template-columns: 2fr 1fr; gap: 18px; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 18px; box-shadow: 0 8px 24px rgba(0,0,0,.04); }
+.card h2 { margin-top: 0; font-size: 1.1rem; }
+.form-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 14px; }
+.label { display: block; margin-bottom: 6px; font-size: 14px; color: var(--muted); }
+.input { width: 100%; padding: 10px 12px; border-radius: 10px; border: 1px solid #cdb9a4; background: white; font-size: 16px; }
+.metrics { display: grid; grid-template-columns: 1fr; gap: 10px; margin-top: 14px; }
+.metrics div { display: flex; justify-content: space-between; gap: 12px; padding-bottom: 8px; border-bottom: 1px dashed var(--border); }
+.metrics span { color: var(--muted); }
+.status { font-weight: 700; }
+.error { color: #9e2d2d; }
+.side-card.good { background: var(--good); }
+.side-card.warn { background: var(--warn); }
+.side-card.danger { background: var(--danger); }
+.note-card p, .muted { color: var(--muted); }
+.chart-card { grid-column: 1 / -1; }
+.chart-wrap { width: 100%; height: 420px; }
+
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  .form-grid { grid-template-columns: 1fr; }
+  .chart-wrap { height: 340px; }
+}
